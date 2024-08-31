@@ -1,0 +1,13 @@
+Para separar os endpoints da sua Minimal API em .NET 6 por contexto, você pode organizar seu código usando classes estáticas para cada contexto. 
+Cada classe será responsável por registrar os endpoints relacionados ao seu domínio específico, como Departamentos, Pedidos, Produtos, etc. 
+Isso ajuda a manter o código limpo e organizado.
+
+Estrutura do Projeto
+Primeiro, vamos criar uma estrutura de pastas para os diferentes contextos:
+
+/SeuProjeto
+  /Contexts
+    /DepartamentosContext.cs
+    /PedidosContext.cs
+    /ProdutosContext.cs
+  Program.cs
