@@ -15,7 +15,7 @@ var app = builder.Build();
 // Registra os endpoints dos diferentes contextos
 DepartamentosContext.MapDepartamentosEndpoints(app);
 
-app.MapGet("/pedidos", async (IDbConnection db, int departmentId, DateTime? date, string? periodo) =>
+app.MapGet("/pedidos", async (IDbConnection db, int departmentId, DateTime? data, string? periodo) =>
 {
     string sqlQuery = @"
         SELECT p.Id AS PedidoId, p.DepartamentoId, p.DataCriacao, p.Periodo, p.NomeCliente, p.Status, p.Pago, p.ValorTotal, p.TipoPagamento,
@@ -23,9 +23,8 @@ app.MapGet("/pedidos", async (IDbConnection db, int departmentId, DateTime? date
         FROM Pedidos p
         LEFT JOIN Produtos pr ON p.Id = pr.PedidoId
         WHERE p.DepartamentoId = @DepartmentId
-        AND DATE(p.DataCriacao) = @Date
-        AND (@Periodo IS NULL OR p.Periodo = @Periodo)
-        ORDER BY p.DataCriacao DESC";
+        AND (@Data IS NULL OR p.DataCriacao = @Data)
+        AND (@Periodo IS NULL OR p.Periodo = @Periodo)";
 
     var pedidos = new Dictionary<int, Pedido>();
 
@@ -48,11 +47,16 @@ app.MapGet("/pedidos", async (IDbConnection db, int departmentId, DateTime? date
             return pedidoExistente;
         },
         splitOn: "ProdutoId",
-        param: new { DepartmentId = departmentId, Date = date, Periodo = periodo }
+        param: new { DepartmentId = departmentId, Data = data, Periodo = periodo }
     );
 
     return Results.Ok(pedidos.Values);
 });
+
+
+
+
+
 
 app.MapPost("/pedidos", async (Pedido pedido, IDbConnection db) =>
 {
