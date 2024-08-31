@@ -92,3 +92,8 @@ C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\obj\Debug\net6.0\refint\Lan
 C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\obj\Debug\net6.0\LanchoneteApi.pdb
 C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\obj\Debug\net6.0\LanchoneteApi.genruntimeconfig.cache
 C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\obj\Debug\net6.0\ref\LanchoneteApi.dll
+C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\bin\Debug\net6.0\publish\web.config
+C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\bin\Debug\net6.0\publish\appsettings.Development.json
+C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\bin\Debug\net6.0\publish\appsettings.json
+C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\bin\Debug\net6.0\publish\LanchoneteApi.deps.json
+C:\DEV\ProjetoLanchonete\LanchoneteApi\LanchoneteApi\bin\Debug\net6.0\publish\LanchoneteApi.runtimeconfig.json
