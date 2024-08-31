@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DEV\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj": {}
+    "C:\\DEV\\ProjetoLanchonete\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj": {}
   },
   "projects": {
-    "C:\\DEV\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj": {
+    "C:\\DEV\\ProjetoLanchonete\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEV\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj",
+        "projectUniqueName": "C:\\DEV\\ProjetoLanchonete\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj",
         "projectName": "LanchoneteApi",
-        "projectPath": "C:\\DEV\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj",
+        "projectPath": "C:\\DEV\\ProjetoLanchonete\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\DEV\\LanchoneteApi\\LanchoneteApi\\obj\\",
+        "outputPath": "C:\\DEV\\ProjetoLanchonete\\LanchoneteApi\\LanchoneteApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",

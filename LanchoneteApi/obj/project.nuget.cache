@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mwaI72PC8qja093ZD9Vv/mzK0148l21R93jVSaab/DKOy2w7ZnP/NgCd/aVvBwHSL6+7gMlI4wmOSknrTWstvQ==",
+  "dgSpecHash": "F1Ft1LBeg6BuFCN/G6Mvf6YDpB7wyf5SOKntK+xv6U7GV+aflBW6PnjP9hKtHUFF/uVJocn3fLK7vn/ZJ1Lu2A==",
   "success": true,
-  "projectFilePath": "C:\\DEV\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj",
+  "projectFilePath": "C:\\DEV\\ProjetoLanchonete\\LanchoneteApi\\LanchoneteApi\\LanchoneteApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dev\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\Dev\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
