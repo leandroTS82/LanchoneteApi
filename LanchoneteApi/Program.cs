@@ -1,4 +1,3 @@
-using Dapper;
 using MySql.Data.MySqlClient;
 using System.Data;
 
@@ -6,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Registre o serviço
 builder.Services.AddScoped<IPedidoService, PedidoService>();
+builder.Services.AddScoped<IDepartamentosServices, DepartamentosService>();
 
 // Adicione a string de conexão do banco de dados
 string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

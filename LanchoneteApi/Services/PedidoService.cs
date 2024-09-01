@@ -1,6 +1,7 @@
 // Services/PedidoService.cs
 using System.Data;
 using Dapper;
+using Microsoft.AspNetCore.Mvc;
 
 public class PedidoService : IPedidoService
 {
@@ -21,7 +22,7 @@ public class PedidoService : IPedidoService
             WHERE p.DepartamentoId = @DepartmentId
             AND (@Data IS NULL OR DATE(p.DataCriacao) = DATE(@Data))
             AND (@Periodo IS NULL OR p.Periodo = @Periodo)
-            ORDER BY p.DataCriacao DESC;
+            ORDER BY p.ID DESC;
         ";
 
         var pedidosDictionary = new Dictionary<int, Pedido>();
@@ -49,5 +50,44 @@ public class PedidoService : IPedidoService
         );
 
         return pedidosDictionary.Values.ToList();
+    }
+
+    public async Task<int> RegistrarPedido(Pedido pedido)
+    {
+
+        var dataCriacao = FormatDate.BrasiliaNow();
+
+        var sqlPedido = "INSERT INTO Pedidos (DepartamentoId, DataCriacao, Periodo, NomeCliente, Status, Pago, ValorTotal, TipoPagamento) " +
+                        "VALUES (@DepartamentoId, @DataCriacao, @Periodo, @NomeCliente, @StatusPedido, @Pago, @ValorTotal, @TipoPagamento); " +
+                        "SELECT LAST_INSERT_ID();";
+        var pedidoId = await _db.ExecuteScalarAsync<int>(sqlPedido, new
+        {
+            pedido.DepartamentoId,
+            dataCriacao,
+            pedido.Periodo,
+            pedido.NomeCliente,
+            pedido.StatusPedido,
+            pedido.Pago,
+            pedido.ValorTotal,
+            pedido.TipoPagamento
+        });
+        // Atribua o ID ao pedido
+        pedido.Id = pedidoId;
+        // Inserir produtos associados ao pedido
+        foreach (var produto in pedido.Produtos)
+        {
+            var sqlProduto = "INSERT INTO Produtos (Descricao, ValorUnitario, Quantidade, ValorTotal, PedidoId) " +
+                             "VALUES (@Descricao, @ValorUnitario, @Quantidade, @ValorTotal, @PedidoId)";
+            await _db.ExecuteAsync(sqlProduto, new
+            {
+                produto.Descricao,
+                produto.ValorUnitario,
+                produto.Quantidade,
+                produto.ValorTotal,
+                PedidoId = pedido.Id // Use o ID do pedido inserido
+            });
+        }
+
+        return pedidoId;
     }
 }
