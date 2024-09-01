@@ -18,25 +18,27 @@ Desenho de exemplo considerando contexto de pedidos
 
 /MyMinimalApiProject
 │
-├── /Controllers
+├── /Context
 │   └── PedidosContext.cs            # Mapeia os endpoints para pedidos.
 │
 ├── /Services
-│   ├── IPedidoService.cs            # Interface para o serviço de pedidos.
+├──── /Interface
+│     ├── IPedidoService.cs            # Interface para o serviço de pedidos.
 │   └── PedidoService.cs             # Implementação do serviço de pedidos.
+├──── /Utils                        # classes auxiliáres como formatação de datas. 
 │
 ├── /Models
 │   ├── Pedido.cs                    # Modelo de dados para Pedido.
 │   ├── Produto.cs                   # Modelo de dados para Produto.
 │   └── Departamento.cs              # Modelo de dados para Departamento.
 │
-├── /Data
-│   └── IDbConnectionFactory.cs      # Interface para criar conexões com o banco de dados (opcional).
-│
-├── /Configurations
-│   └── DatabaseConfiguration.cs     # Configuração para strings de conexão e outros parâmetros de banco de dados (opcional).
 │
 ├── appsettings.json                 # Arquivo de configuração para strings de conexão e outras configurações.
 ├── Program.cs                       # Ponto de entrada da aplicação que configura a Minimal API e injeta serviços.
 ├── MyMinimalApiProject.csproj       # Arquivo de projeto do .NET.
 └── README.md                        # Documentação do projeto.
+
+
+## O que precisa ser revisto e melhorado
+ * Tratamentos de erros
+ * Separação de Services criando camada de Repositórios para persistencia de dados.
